@@ -1,0 +1,246 @@
+/* ======================================
+   TAMPILAN UMUM (Reset & Dasar)
+   ====================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header & Logo */
+.header-profil {
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 30px 20px;
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+}
+
+.judul {
+    text-align: center;
+}
+
+.judul h1 {
+    margin-bottom: 5px;
+}
+
+/* Kontainer Utama untuk Flexbox (Nav, Section, Aside) */
+.container-utama {
+    display: flex;
+    flex-direction: column; /* Default HP: Berderet ke bawah */
+    margin: 15px;
+    gap: 15px;
+}
+
+nav {
+    background-color: #34495e;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #3498db;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 250px;
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+aside {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+aside h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+
+aside p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+aside hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* ======================================
+   MEDIA QUERIES (DESKTOP / LAYAR BESAR)
+   ====================================== */
+@media (min-width: 992px) {
+    .container-utama {
+        display: grid;
+        grid-template-columns: 25% 50% 25%; /* Nav 25%, Section 50%, Aside 25% sesuai soal */
+        gap: 15px;
+    }
+
+    nav {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* ======================================
+   MEDIA QUERIES: TABLET PORTRAIT
+   ====================================== */
+@media (min-width: 600px) and (max-width: 991px) {
+    .container-utama {
+        display: grid;
+        grid-template-columns: 30% 70%; /* Nav di kiri/atas, Section di kanan */
+        grid-template-areas: 
+            "nav section"
+            "aside aside"; /* Aside selebar 100% di bagian bawah */
+        gap: 15px;
+    }
+
+    nav {
+        grid-area: nav;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    section {
+        grid-area: section;
+        margin: 0;
+    }
+
+    aside {
+        grid-area: aside;
+        margin-top: 5px;
+    }
+}
+
+/* ======================================
+   MEDIA QUERIES: TABLET LANDSCAPE & DESKTOP
+   ====================================== */
+@media (min-width: 992px) {
+    .container-utama {
+        display: grid;
+        /* Sesuai soal: Nav 25%, Section 50%, Aside 25% */
+        grid-template-columns: 25% 50% 25%; 
+        gap: 15px;
+    }
+
+    nav {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+
+.header-profil {
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Mengatur posisi mulai dari kiri */
+    gap: 20px; /* Jarak antara foto dan teks */
+    padding: 25px 30px;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: static; /* Menghilangkan posisi absolute yang membuat tumpang tindih */
+    transform: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat foto menjadi bulat */
+    border: 3px solid white; /* Memberikan border putih agar lebih manis */
+    background: white;
+}
+
+.judul {
+    text-align: left; /* Teks rata kiri agar sejajar rapi dengan foto */
+}
+
+.judul h1 {
+    font-size: 24px;
+    margin: 0 0 5px 0;
+}
+
+.judul p {
+    font-size: 14px;
+    margin: 0;
+    color: #bdc3c7; /* Warna abu-abu terang untuk sub-teks */
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profil Saya - Giovanni Davin Ardiansyah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header-profil">
+        <div class="logo">
+            <img src="profile.jpeg" alt="Foto Profil">
+        </div>
+        <div class="judul">
+            <h1>Profil Mahasiswa</h1>
+            <p>NAMA WEB - Sistem Informasi</p>
+        </div>
+    </header>
+
+    <!-- KONTAINER UTAMA (NAV, SECTION, ASIDE) -->
+    <div class="container-utama">
+        
+        <!-- NAVIGASI -->
+        <nav>
+            <a href="#" onclick="tampilkan('biodata')">Biodata</a>
+            <a href="#" onclick="tampilkan('pendidikan')">Pendidikan</a>
+            <a href="#" onclick="tampilkan('pengalaman')">Pengalaman</a>
+            <a href="#" onclick="tampilkan('keahlian')">Keahlian</a>
+            <a href="#" onclick="tampilkan('publikasi')">Publikasi</a>
+        </nav>
+
+        <!-- SECTION (ISI KONTEN UTAMA) -->
+        <section id="konten">
+            <!-- Default awal tampil Biodata -->
+            <h2>Biodata Saya</h2>
+            <p><strong>NIM:</strong> 2023081063</p>
+            <p><strong>Nama:</strong> Giovanni Davin Ardiansyah</p>
+            <p><strong>Agama:</strong> Islam</p>
+            <p><strong>Tanggal Lahir:</strong> 27 Agustus 2005</p>
+            <p><strong>Tempat Lahir:</strong> Sukoharjo</p>
+            <p><strong>Alamat:</strong> Griya Pamulang 2 E2/3A</p>
+            <p><strong>Email:</strong> giovannidavin566@gmail.com</p>
+        </section>
+
+        <!-- ASIDE (KONTEN SAMPING: HOBI & SOSMED) -->
+        <aside>
+            <div class="info-aside">
+                <h3>Hobi</h3>
+                <p>Bulutangkis</p>
+                <p>Bola</p>
+                <p>Pemrograman</p>
+            </div>
+            <hr>
+            <div class="info-aside">
+                <h3>Media Sosial</h3>
+                <p>Twitter: @akun</p>
+                <p>FB: @akun</p>
+                <p>Instagram: @akun</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Copyright &copy; 2026. All Rights Reserved | Slogan/Keterangan/Informasi Web</p>
+    </footer>
+
+    <!-- JAVASCRIPT GANTI KONTEN -->
+    <script>
+        const konten = {
+            biodata: `
+                <h2>Biodata Saya</h2>
+                <p><strong>NIM:</strong> 2023081063</p>
+                <p><strong>Nama:</strong> Giovanni Davin Ardiansyah</p>
+                <p><strong>Agama:</strong> Islam</p>
+                <p><strong>Tanggal Lahir:</strong> 27 Agustus 2005</p>
+                <p><strong>Tempat Lahir:</strong> Sukoharjo</p>
+                <p><strong>Alamat:</strong> Griya Pamulang 2 E2/3A</p>
+                <p><strong>Email:</strong> giovannidavin566@gmail.com</p>
+            `,
+            pendidikan: `
+                <h2>Riwayat Pendidikan</h2>
+                <p><strong>2023 - Sekarang:</strong> Universitas Pembangunan Jaya, S1 Sistem Informasi</p>
+                <p><strong>2020 - 2023:</strong> SMA Negeri 1 Tangerang Selatan</p>
+                <p><strong>2017 - 2020:</strong> SMP Negeri 3 Tangerang Selatan</p>
+            `,
+            pengalaman: `
+                <h2>Pengalaman</h2>
+                <p><strong>2024:</strong> Divisi Dana Usaha GIDHUB</p>
+                <p><strong>2026:</strong> Magang di POLRES Tangerang Kota bagian Divisi HUMAS</p>
+            `,
+            keahlian: `
+                <h2>Keahlian</h2>
+                <p>✅ Dasar Pemrograman (C++, Python)</p>
+                <p>✅ HTML & CSS</p>
+                <p>✅ Microsoft Office (Word, Excel, PowerPoint)</p>
+                <p>✅ Desain Grafis Sederhana (Canva)</p>
+            `,
+            publikasi: `
+                <h2>Publikasi</h2>
+                <p>Belum ada publikasi jurnal atau artikel ilmiah yang diterbitkan.</p>
+            `
+        };
+
+        function tampilkan(jenis) {
+            document.getElementById('konten').innerHTML = konten[jenis];
+        }
+    </script>
+
+</body>
+</html>
